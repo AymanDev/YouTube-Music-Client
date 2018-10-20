@@ -7,13 +7,7 @@ const clientId = '503099918488043520';
 let win;
 const menuTemplate = [
   {
-    label: "Discord RPC",
-    submenu: [
-      {label: "Reload"}
-    ]
-  },
-  {
-    label: "View",
+    label: "Interface",
     submenu: [
       {role: "Reload"}
     ]
@@ -22,8 +16,10 @@ const menuTemplate = [
 
 function createWindow() {
   // Create the browser window.
-  win = new BrowserWindow({width: 829, height: 625});
-  win.setResizable(false);
+  win = new BrowserWindow({width: 800, height: 700});
+  win.setMinimumSize(300, 300);
+  win.setSize(800, 700);
+  win.setResizable(true);
   //win.openDevTools();
   const menu = Menu.buildFromTemplate(menuTemplate);
   Menu.setApplicationMenu(menu);
@@ -60,23 +56,41 @@ DiscordRPC.register(clientId);
 const rpc = new DiscordRPC.Client({transport: 'ipc'});
 let startTimestamp = new Date();
 let prevInfo = '';
+let prevArgs = [];
 
 function setActivity() {
   if (!rpc || !win) {
     return;
   }
-
-  if(prevInfo !== win.getTitle()){
-    startTimestamp = new Date();
-    prevInfo = win.getTitle();
-  }
   const args = win.getTitle().split(' - ');
+  let smallImage = 'play';
+  let details = args[0];
+  let state = args[1];
+  let smallImageText = 'Listening';
+
+  if (prevInfo !== win.getTitle()) {
+    prevInfo = win.getTitle();
+
+    if (args.length > 1) {
+      prevArgs = args;
+    }
+  }
+
+  if (args.length < 2) {
+    smallImage = 'pause';
+    smallImageText = 'Paused';
+    details = prevArgs[0];
+    state = prevArgs[1];
+  }
+
   rpc.setActivity({
-    details: args[0],
-    state: args[1],
+    details: details,
+    state: state,
     startTimestamp,
     largeImageKey: 'youtubemusic_logo',
-    largeImageText: 'Listening',
+    largeImageText: 'YouTube Music',
+    smallImageKey: smallImage,
+    smallImageText: smallImageText,
     instance: false,
   });
 }
