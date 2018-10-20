@@ -1,0 +1,30 @@
+{
+  "name": "youtubemusic",
+  "version": "1.0.0",
+  "description": "YouTube Music Client with Discord RPC support",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [
+    "youtube",
+    "music",
+    "client",
+    "discord",
+    "rpc",
+    "rich",
+    "presence"
+  ],
+  "author": "AymanDev",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "electron": "^3.0.5"
+  },
+  "dependencies": {
+    "discord-rpc": "^3.0.1",
+    "discord.js": "^11.4.2"
+  }
+}
