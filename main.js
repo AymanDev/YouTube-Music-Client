@@ -73,6 +73,7 @@ function setActivity() {
 
     if (args.length > 1) {
       prevArgs = args;
+      startTimestamp = new Date(); 
     }
   }
 
