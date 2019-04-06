@@ -23,13 +23,13 @@
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
-    "electron": "^3.0.5",
     "electron-packager": "^13.0.1"
   },
   "dependencies": {
     "asar": "^0.14.6",
     "discord-rpc": "^3.0.1",
     "discord.js": "^11.4.2",
+    "electron": "^3.0.5",
     "electron-builder": "^20.38.4"
   },
   "appId": "youtube.music",
