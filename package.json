@@ -4,7 +4,6 @@
   "description": "YouTube Music Client with Discord RPC support",
   "main": "start.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
@@ -30,7 +29,9 @@
     "discord-rpc": "^3.0.1",
     "discord.js": "^11.4.2",
     "electron": "^3.0.5",
-    "electron-builder": "^20.38.4"
+    "electron-builder": "^20.38.4",
+    "lodash": ">=4.17.13",
+    "js-yaml": ">=3.13.1"
   },
   "appId": "youtube.music",
   "mac": {
