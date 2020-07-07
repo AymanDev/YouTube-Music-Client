@@ -28,7 +28,7 @@
     "asar": "^0.14.6",
     "discord-rpc": "^3.0.1",
     "discord.js": "^11.4.2",
-    "electron": "^3.0.5",
+    "electron": "^9.1.0",
     "electron-builder": "^20.38.4",
     "lodash": ">=4.17.13",
     "js-yaml": ">=3.13.1"
